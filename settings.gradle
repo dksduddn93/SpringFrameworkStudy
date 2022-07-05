@@ -1,0 +1,3 @@
+rootProject.name = 'JavaSpringExample'
+
+include("tobyspring:tobychapter6")
