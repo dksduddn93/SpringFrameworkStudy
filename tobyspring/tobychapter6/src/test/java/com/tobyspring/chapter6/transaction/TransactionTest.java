@@ -25,7 +25,6 @@ public class TransactionTest {
     public void readOnlyTransaction에_저장하면_예외를_던진다() {
         /*
             H2에서는 실패한다 Mysql에서는 정상작동
-
          */
         Assertions.assertThrows(
                 TransientDataAccessResourceException.class

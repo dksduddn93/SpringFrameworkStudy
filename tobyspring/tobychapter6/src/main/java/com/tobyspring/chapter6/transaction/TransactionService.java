@@ -1,7 +1,10 @@
 package com.tobyspring.chapter6.transaction;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -17,6 +20,10 @@ public class TransactionService {
 
     @Transactional(readOnly = true)
     public Person saveReadOnly(Person person) {
+        // Update => Exception
         return personRepository.save(person);
+    }
+    public void allSave() {
+        this.save(new Person());
     }
 }
